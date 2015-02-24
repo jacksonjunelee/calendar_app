@@ -1,41 +1,24 @@
 App.Models.User = Backbone.Model.extend({
   initialize:function(){
-    var OAUTHURL    =   'https://accounts.google.com/o/oauth2/auth?';
-    var VALIDURL    =   'https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=';
-    var SCOPE       =   'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email';
-    var CLIENTID    =   '<%= ENV["GOOGLE_CLIENT"] %>';
-    var REDIRECT    =   'http://localhost:3000/auth/google_oauth2/callback';
-    var LOGOUT      =   'http://accounts.google.com/Logout';
-    var TYPE        =   'token';
-    var _url        =   OAUTHURL + 'scope=' + SCOPE + '&client_id=' + CLIENTID + '&redirect_uri=' + REDIRECT + '&response_type=' + TYPE;
-    var acToken;
-    var tokenType;
-    var expiresIn;
-    var user;
-    var loggedIn    =   false;
     this.login(_url);
   },
 
   login:function(_url){
     console.log(_url);
     var win         =   window.open(_url, "windowname1", 'width=800, height=600');
-
-            console.log("mooo");
-
     var pollTimer   =   window.setInterval(function() {
         try {
             console.log(win.document.URL);
             console.log("mooo");
-
             if (win.document.URL.indexOf(REDIRECT) != -1) {
                 window.clearInterval(pollTimer);
                 var url =   win.document.URL;
-                acToken =   this.gup(url, 'access_token');
-                tokenType = this.gup(url, 'token_type');
-                expiresIn = this.gup(url, 'expires_in');
+                acToken =   App.user.gup(url, 'access_token');
+                tokenType = App.user.gup(url, 'token_type');
+                expiresIn = App.user.gup(url, 'expires_in');
                 win.close();
 
-                this.validateToken(acToken);
+                App.user.validateToken(acToken);
             }
         } catch(e) {
           console.log(e)
@@ -60,7 +43,7 @@ App.Models.User = Backbone.Model.extend({
         url: VALIDURL + token,
         data: null,
         success: function(responseText){
-            getUserInfo();
+          App.user.getUserInfo();
             loggedIn = true;
             $('#loginText').hide();
             $('#logoutText').show();
@@ -81,16 +64,19 @@ App.Models.User = Backbone.Model.extend({
         },
         dataType: "jsonp"
     });
+  },
+
+  startLogoutPolling: function(){
+    $('#loginText').show();
+    $('#logoutText').hide();
+    loggedIn = false;
+    $('#uName').text('Welcome ');
+    $('#imgHolder').attr('src', 'none.jpg');
   }
 
 
   //
   //       function startLogoutPolling() {
-  //           $('#loginText').show();
-  //           $('#logoutText').hide();
-  //           loggedIn = false;
-  //           $('#uName').text('Welcome ');
-  //           $('#imgHolder').attr('src', 'none.jpg');
   //       }
   //
   //
