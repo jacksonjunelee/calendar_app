@@ -31,6 +31,6 @@ var App = {
 };
 
 $(function(){
-	App.user = new App.Models.User();
+	App.login = new App.Views.Login();
 
 });

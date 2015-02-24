@@ -8,7 +8,9 @@
 </head>
 
 <body>
-   <a href='#' onClick='login();' id="loginText"> Click here to login </a>
+
+  <div id="initialLogin"></div>
+
   <a href="#" style="display:none" id="logoutText" target='myIFrame' onclick="myIFrame.location='https://www.google.com/accounts/Logout'; startLogoutPolling();return false;"> Click here to logout </a>
   <iframe name='myIFrame' id="myIFrame" style='display:none'></iframe>
   <div id='uName'></div>
