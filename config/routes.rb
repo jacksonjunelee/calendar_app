@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root 'application#index'
-  get "/auth/google_oauth2/callback" => "sessions#create"
   # match "https://www.googleapis.com/auth/calendar" => "sessions#create"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

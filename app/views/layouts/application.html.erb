@@ -7,7 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 
-<iframe src="https://www.google.com/calendar/embed?src=jjlee5266@gmail.com&ctz=America/New_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<body>
+   <a href='#' onClick='login();' id="loginText"> Click here to login </a>
+  <a href="#" style="display:none" id="logoutText" target='myIFrame' onclick="myIFrame.location='https://www.google.com/accounts/Logout'; startLogoutPolling();return false;"> Click here to logout </a>
+  <iframe name='myIFrame' id="myIFrame" style='display:none'></iframe>
+  <div id='uName'></div>
+  <img src='' id='imgHolder'/>
+<!--
+<iframe src="https://www.google.com/calendar/embed?src=jjlee5266@gmail.com&ctz=America/New_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no" seamless></iframe>  -->
 
 
 <%= yield %>
