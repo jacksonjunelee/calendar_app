@@ -1,3 +1,4 @@
+// frontpage login button
 App.Views.Login = Backbone.View.extend({
   el: '.initialLogin',
   events:{

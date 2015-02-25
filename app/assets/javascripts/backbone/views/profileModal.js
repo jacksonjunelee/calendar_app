@@ -1,3 +1,4 @@
+// Main View (Profile and Google Calendar iframe)
 App.Views.ProfileModal = Backbone.View.extend({
   el: '.main-modal',
   events:{
