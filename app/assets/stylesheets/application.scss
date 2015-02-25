@@ -17,6 +17,11 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+body{
+  font-family: 'Josefin Sans', Futura, Helvetica, sans-serif;
+  background-color: #FCFDFF;
+}
+
 h1 {
   padding-top:1rem;
   font-size: 4.3rem;
@@ -56,6 +61,11 @@ h4{
 .row{
   border: 1px solid #D30006;
   margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.eventRow{
+  border: 0;
 }
 
 .welcomeMessage{
@@ -69,5 +79,18 @@ h4{
 
 iframe{
   float:right;
+  border: 0;
+  width: 85rem;
+  height:70rem;
+}
+
+.eventButton{
+  font-size: 2rem;
+  margin-right:0.5rem;
+  float: left;
+}
+
+.event, .submit{
+  margin-top: 1rem;
 
 }

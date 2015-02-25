@@ -6,12 +6,12 @@ App.Views.ProfileModal = Backbone.View.extend({
 
   initialize:function(){
     console.log("Profile View Created");
-    this.profileTemplate = HandlebarsTemplates['profile'];
+    this.mainTemplate = HandlebarsTemplates['main'];
     this.render();
   },
 
   render: function(){
-    this.$el.html(this.profileTemplate(this.model))
+    this.$el.html(this.mainTemplate(this.model))
     $('.main-modal').append(this.$el);
   },
 
