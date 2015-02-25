@@ -45,8 +45,6 @@ App.Models.User = Backbone.Model.extend({
         success: function(responseText){
           App.user.getUserInfo();
             loggedIn = true;
-            $('#loginText').hide();
-            $('#logoutText').show();
         },
         dataType: "jsonp"
     });
@@ -59,42 +57,10 @@ App.Models.User = Backbone.Model.extend({
         success: function(resp) {
             user    =   resp;
             console.log(user);
-            $('#uName').text('Welcome ' + user.name);
-            $('#imgHolder').attr('src', user.picture);
+            App.uprofile = new App.Views.ProfileModal({model: user});
+            App.e = new App.Views.Event();
         },
         dataType: "jsonp"
     });
-  },
-
-  startLogoutPolling: function(){
-    $('#loginText').show();
-    $('#logoutText').hide();
-    loggedIn = false;
-    $('#uName').text('Welcome ');
-    $('#imgHolder').attr('src', 'none.jpg');
   }
-
-
-  //
-  //       function startLogoutPolling() {
-  //       }
-  //
-  //
-  //
-  //
-  // }
-
-
 });
-
-
-// App.Models.Headquarter = Backbone.Model.extend({
-//   url: '/locations',
-//   parse:function(response){
-//     return response[1];
-//   },
-//   initialize:function(){
-//     console.log("headquarter Model created");
-//     this.fetch();
-//   }
-// });

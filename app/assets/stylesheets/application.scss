@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+h1 {
+  padding-top:1rem;
+  font-size: 4.3rem;
+  color: #D30006;
+}
+.profilePic {
+  height: 2rem;
+}
+
+.loginText{
+  margin-top: 20rem;
+}
+
+.btn-xlg {
+    padding: 5rem 5rem 3rem 3rem;
+    font-size: 5rem; //change this to your desired size
+    border: 1px solid #D30006;
+    line-height: normal;
+    -webkit-border-radius: 8rem;
+       -moz-border-radius: 8rem;
+            border-radius: 8rem;
+}
