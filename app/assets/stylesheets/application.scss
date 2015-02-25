@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
@@ -21,20 +22,52 @@ h1 {
   font-size: 4.3rem;
   color: #D30006;
 }
+
+h4{
+  color: #D30006;
+  position: relative;
+  left: 22rem;
+}
+
 .profilePic {
-  height: 2rem;
+  max-height: 25rem;
+  max-width: 25rem;
+  padding-left:6rem;
+  padding-top:1rem;
+  padding-bottom:1rem;
 }
 
 .loginText{
   margin-top: 20rem;
 }
 
-.btn-xlg {
-    padding: 5rem 5rem 3rem 3rem;
-    font-size: 5rem; //change this to your desired size
+.btn {
     border: 1px solid #D30006;
     line-height: normal;
     -webkit-border-radius: 8rem;
        -moz-border-radius: 8rem;
             border-radius: 8rem;
+}
+.btn-xlg {
+    padding: 5rem 5rem 3rem 3rem;
+    font-size: 5rem; //change this to your desired size
+}
+
+.row{
+  border: 1px solid #D30006;
+  margin-top: 3rem;
+}
+
+.welcomeMessage{
+  position: relative;
+  left: 18rem;
+}
+
+.logout{
+  margin-top: 1rem;
+}
+
+iframe{
+  float:right;
+
 }
