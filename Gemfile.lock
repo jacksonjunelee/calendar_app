@@ -29,10 +29,14 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    autoprefixer-rails (5.1.5)
+      execjs
+      json
     backbars (0.0.11)
       handlebars_assets
-    bootstrap-sass (3.1.1.1)
-      sass (~> 3.2)
+    bootstrap-sass (3.3.3)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.2.19)
     builder (3.2.2)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -130,7 +134,7 @@ PLATFORMS
 
 DEPENDENCIES
   backbars
-  bootstrap-sass (~> 3.1.1)
+  bootstrap-sass (~> 3.3.3)
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
